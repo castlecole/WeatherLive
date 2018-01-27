@@ -157,8 +157,8 @@ metadata {
         valueTile("lastSTupdate", "device.lastSTupdate", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'Last Updated\n ${currentValue}'
         }
-        valueTile("humidity", "device.humidity", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Humidity ${currentValue}%', unit:"%"
+        valueTile("humidity", "device.humidity", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
+            state "default", label:'${currentValue}%', unit:"", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/humidity.png"
         }
         valueTile("weather", "device.weather", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue}'
@@ -175,14 +175,14 @@ metadata {
         standardTile("refresh", "device.weather", inactiveLabel: false, width: 2, height: 2, decoration: "flat", wordWrap: true) {
             state "default", label: "", action: "refresh", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/refresh.png"
         }
-        valueTile("alert", "device.alert", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
+        valueTile("alert", "device.alert", inactiveLabel: false, width: 4, height: 2, decoration: "flat", wordWrap: true) {
             state "default", label:'Weather Alerts:\n ${currentValue}'
         }        
-	valueTile("rise", "device.localSunrise", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Sunrise\n ${currentValue}'
+	valueTile("rise", "device.localSunrise", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
+            state "default", label:'${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunrise.png"
         }
-        valueTile("set", "device.localSunset", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Sunset\n ${currentValue}'
+        valueTile("set", "device.localSunset", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
+            state "default", label:'${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunset.png"
         }
         valueTile("light", "device.illuminance", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue} lux'
@@ -199,7 +199,7 @@ metadata {
             state "false",       icon: "st.alarm.water.dry",        backgroundColor:"#99ff99"
         }
         valueTile("dewpoint", "device.dewpoint", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Dewpoint ${currentValue}°'
+            state "default", label:'${currentValue}°', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/dewpoint.png"
         }
         valueTile("pressure", "device.pressure", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
             state "pressure", label: 'Barometric Pressure ${currentValue}'
@@ -224,9 +224,9 @@ metadata {
 
         
         main "temperature2"
-        details(["temperature", "feelslike", "weather", "weatherIcon", "humidity", "water", "percentPrecip", "dewpoint", 
-		 "windinfo", "pressure", "rise", "visibility", "uv_index", "set", "light", "lastSTupdate",
-		 "percentPrecipToday", "percentPrecipLastHour", "alert", "refresh"])}
+        details(["temperature", "feelslike", "weather", "weatherIcon", "light", "water", "percentPrecip", "humidity", "dewpoint", 
+		 "windinfo", "pressure", "rise", "visibility", "uv_index", "set", 
+		 "percentPrecipToday", "percentPrecipLastHour", "lastSTupdate", "alert", "refresh"])}  
 }
 
 // parse events into attributes
