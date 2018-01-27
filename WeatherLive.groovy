@@ -167,10 +167,10 @@ metadata {
             state "default", label:'Rain\n ${currentValue}%', backgroundColor:"#0094ee"
         }
         valueTile("percentPrecipToday", "device.percentPrecipToday", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Rainfall Today\n ${currentValue}', backgroundColor:"#1e9cbb"
+            state "default", label:'Rain Today\n ${currentValue}', backgroundColor:"#0094ee"
         }
         valueTile("percentPrecipLastHour", "device.percentPrecipLastHour", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Rainfall Last Hour\n ${currentValue}', backgroundColor:"#1e9cbb"
+            state "default", label:'Rain Hour\n ${currentValue}', backgroundColor:"#0094ee"
         }
         standardTile("refresh", "device.weather", inactiveLabel: false, width: 2, height: 2, decoration: "flat", wordWrap: true) {
             state "default", label: "", action: "refresh", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/refresh.png"
