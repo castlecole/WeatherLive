@@ -104,7 +104,7 @@ metadata {
                ])
             }
             tileAttribute("device.feelsLike", key: "SECONDARY_CONTROL") {
-                attributeState("default", label:'Feels Like ${currentValue}°')
+                attributeState("default", label:'Feels Like ${currentValue}°', icon:"https://raw.githubusercontent.com/castlecole/Xiaomi/master/temperature2.png")
             }
         }    
         standardTile("weatherIcon", "device.weatherIcon", decoration: "flat", width: 2, height: 2) {
@@ -176,7 +176,7 @@ metadata {
             state "default", label: "", action: "refresh", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/refresh.png"
         }
         valueTile("alert", "device.alert", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Weather Alerts:\n ${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/icon-warning.png"
+            state "default", label:'Weather Alerts:\n ${currentValue}'
         }        
 	valueTile("rise", "device.localSunrise", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Sunrise\n ${currentValue}'
@@ -224,7 +224,7 @@ metadata {
 
         
         main "temperature2"
-        details(["temperature", "feelslike", "weatherIcon", "weather", "humidity", "percentPrecip", "dewpoint", "light",
+        details(["temperature", "feelslike", "weather", "percentPrecip", "weatherIcon", "humidity", "light", "dewpoint", 
 		 "windinfo", "pressure", "rise", "visibility", "uv_index", "set", "percentPrecipToday", "lastSTupdate",
 		 "water", "percentPrecipLastHour", "alert", "refresh"])}
 }
