@@ -185,13 +185,13 @@ metadata {
             state "default", label:'${currentValue}\n', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunset-icon.png"
         }
         valueTile("light", "device.illuminance", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'lux\n ${currentValue}', backgroundColor:"#fffc8f"
+            state "default", label:'lux\n ${currentValue}', backgroundColor:"#ffae5a"
         }
         valueTile("visibility", "device.visibility", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Visibility\n ${currentValue}'
         }
         valueTile("uv_index", "device.uv_index", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "uv_index", label: 'UV\n ${currentValue}', unit: "", backgroundColor:"#ffdab3"
+            state "uv_index", label: 'UV\n ${currentValue}', unit: "", backgroundColor:"#ffae5a"
         }
         standardTile("water", "device.water", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'updating...', icon: "st.unknown.unknown.unknown"
@@ -224,9 +224,9 @@ metadata {
 
         
         main "temperature2"
-        details(["temperature", "feelslike", "weather", "weatherIcon", "light", "uv_index", "water", "percentPrecip", "humidity", "dewpoint", 
-		 "windinfo", "pressure", "rise", "visibility","set", 
-		 "percentPrecipToday", "percentPrecipLastHour", "lastSTupdate", "alert", "refresh"])}  
+        details(["temperature", "feelslike", "weather", "weatherIcon", "light", "uv_index", "water", "percentPrecip",  
+		 "humidity", "dewpoint", "windinfo", "pressure", "rise", "visibility","set", 
+		 "percentPrecipToday", "percentPrecipLastHour", "lastSTupdate", "alert", "refresh"])}
 }
 
 // parse events into attributes
