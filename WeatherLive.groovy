@@ -154,11 +154,11 @@ metadata {
             state "nt_cloudy", icon:"st.custom.wu1.nt_cloudy", label: ""
             state "nt_partlycloudy", icon:"st.custom.wu1.nt_partlycloudy", label: ""
         }
-        valueTile("lastSTupdate", "device.lastSTupdate", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
+        valueTile("lastSTupdate", "device.lastSTupdate", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'Last Updated\n ${currentValue}'
         }
         valueTile("humidity", "device.humidity", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'${currentValue}%', unit:"", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/humidity-2.png"
+            state "default", label:'${currentValue}%', unit:"", backgroundColor:"#1e9cbb"
         }
         valueTile("weather", "device.weather", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue}'
@@ -175,13 +175,13 @@ metadata {
         standardTile("refresh", "device.weather", inactiveLabel: false, width: 2, height: 2, decoration: "flat", wordWrap: true) {
             state "default", label: "", action: "refresh", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/refresh.png"
         }
-        valueTile("alert", "device.alert", inactiveLabel: false, width: 4, height: 2, decoration: "flat", wordWrap: true) {
+        valueTile("alert", "device.alert", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Weather Alerts:\n ${currentValue}'
         }        
-	valueTile("rise", "device.localSunrise", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
+	valueTile("rise", "device.localSunrise", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunrise-2.png"
         }
-        valueTile("set", "device.localSunset", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
+        valueTile("set", "device.localSunset", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunset-2.png"
         }
         valueTile("light", "device.illuminance", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
@@ -199,7 +199,7 @@ metadata {
             state "false",       icon: "st.alarm.water.dry",        backgroundColor:"#99ff99"
         }
         valueTile("dewpoint", "device.dewpoint", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'${currentValue}°', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/dewpoint-2.png"
+            state "default", label:'${currentValue}°', backgroundColor:"#1e9cbb"
         }
         valueTile("pressure", "device.pressure", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
             state "pressure", label: 'Barometric Pressure ${currentValue}'
