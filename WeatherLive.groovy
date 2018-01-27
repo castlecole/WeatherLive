@@ -137,7 +137,7 @@ metadata {
             state "nt_chancetstorms", icon:"st.custom.wu1.nt_chancetstorms", label: ""
             state "nt_clear", icon:"st.custom.wu1.nt_clear", label: ""
             state "nt_cloudy", icon:"st.custom.wu1.nt_cloudy", label: ""
-            state "nt_flurries", icon:"st.custom.wu1.nt_flurries", label: ""
+	    state "nt_flurries", icon:"st.custom.wu1.nt_flurries", label: ""
             state "nt_fog", icon:"st.custom.wu1.nt_fog", label: ""
             state "nt_hazy", icon:"st.custom.wu1.nt_hazy", label: ""
             state "nt_mostlycloudy", icon:"st.custom.wu1.nt_mostlycloudy", label: ""
@@ -158,19 +158,19 @@ metadata {
             state "default", label: 'Last Updated\n ${currentValue}'
         }
         valueTile("humidity", "device.humidity", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'hum\n ${currentValue}%', unit:"", backgroundColor:"#1e9cbb"
+            state "default", label:'hum\n ${currentValue}%', unit:"", backgroundColor:"#0094ee"
         }
         valueTile("weather", "device.weather", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue}'
         }
         valueTile("percentPrecip", "device.percentPrecip", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Rain\n ${currentValue}%', backgroundColor:"#1e9cbb"
+            state "default", label:'Rain\n ${currentValue}%', backgroundColor:"#0094ee"
         }
         valueTile("percentPrecipToday", "device.percentPrecipToday", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Rain Today\n ${currentValue}'
+            state "default", label:'Rainfall Today\n ${currentValue}', backgroundColor:"#1e9cbb"
         }
         valueTile("percentPrecipLastHour", "device.percentPrecipLastHour", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Rain Last Hour\n ${currentValue}'
+            state "default", label:'Rainfall Last Hour\n ${currentValue}', backgroundColor:"#1e9cbb"
         }
         standardTile("refresh", "device.weather", inactiveLabel: false, width: 2, height: 2, decoration: "flat", wordWrap: true) {
             state "default", label: "", action: "refresh", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/refresh.png"
@@ -185,13 +185,13 @@ metadata {
             state "default", label:'${currentValue}\n', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunset-icon.png"
         }
         valueTile("light", "device.illuminance", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'lux\n ${currentValue}', backgroundColor:"#ffae5a"
+            state "default", label:'lux\n ${currentValue}', backgroundColor:"#f07800"
         }
         valueTile("visibility", "device.visibility", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Visibility\n ${currentValue}'
         }
         valueTile("uv_index", "device.uv_index", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "uv_index", label: 'UV\n ${currentValue}', unit: "", backgroundColor:"#ffae5a"
+            state "uv_index", label: 'UV\n ${currentValue}', unit: "", backgroundColor:"#f07800"
         }
         standardTile("water", "device.water", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'updating...', icon: "st.unknown.unknown.unknown"
@@ -199,7 +199,7 @@ metadata {
             state "false",       icon: "st.alarm.water.dry",        backgroundColor:"#99ff99"
         }
         valueTile("dewpoint", "device.dewpoint", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Dew\n ${currentValue}°', backgroundColor:"#1e9cbb"
+            state "default", label:'dew\n ${currentValue}°', backgroundColor:"#0094ee"
         }
         valueTile("pressure", "device.pressure", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
             state "pressure", label: 'Barometric Pressure ${currentValue}'
