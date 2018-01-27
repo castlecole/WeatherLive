@@ -164,7 +164,7 @@ metadata {
             state "default", label:'${currentValue}'
         }
         valueTile("percentPrecip", "device.percentPrecip", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Rain\n ${currentValue}%'
+            state "default", label:'Rain\n ${currentValue}%', backgroundColor:"#1e9cbb"
         }
         valueTile("percentPrecipToday", "device.percentPrecipToday", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Rain Today\n ${currentValue}'
@@ -176,7 +176,7 @@ metadata {
             state "default", label: "", action: "refresh", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/refresh.png"
         }
         valueTile("alert", "device.alert", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Weather Alerts:\n ${currentValue}'
+            state "default", label:'Weather Alerts:\n ${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/icon-warning.png"
         }        
 	valueTile("rise", "device.localSunrise", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Sunrise\n ${currentValue}'
@@ -193,7 +193,7 @@ metadata {
         valueTile("uv_index", "device.uv_index", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "uv_index", label: 'UV Index ${currentValue}', unit: "UV Index"
         }
-        standardTile("water", "device.water", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
+        standardTile("water", "device.water", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'updating...', icon: "st.unknown.unknown.unknown"
             state "true",        icon: "st.alarm.water.wet",        backgroundColor:"#ff9999"
             state "false",       icon: "st.alarm.water.dry",        backgroundColor:"#99ff99"
@@ -224,7 +224,9 @@ metadata {
 
         
         main "temperature2"
-        details(["temperature", "feelslike", "weatherIcon", "weather", "humidity" , "dewpoint", "windinfo", "pressure", "solarradiation", "uv_index", "light", "visibility", "city", "rise", "set", "lastSTupdate", "percentPrecip", "percentPrecipToday", "percentPrecipLastHour", "water", "alert", "refresh"])}
+        details(["temperature", "feelslike", "weatherIcon", "weather", "humidity", "percentPrecip", "dewpoint", "light",
+		 "windinfo", "pressure", "rise", "visibility", "uv_index", "set", "percentPrecipToday", "lastSTupdate",
+		 "water", "percentPrecipLastHour", "alert", "refresh"])}
 }
 
 // parse events into attributes
