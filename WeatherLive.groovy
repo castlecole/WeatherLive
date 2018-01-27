@@ -158,7 +158,7 @@ metadata {
             state "default", label: 'Last Updated\n ${currentValue}'
         }
         valueTile("humidity", "device.humidity", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'${currentValue}%', unit:"", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/humidity.png"
+            state "default", label:'${currentValue}%', unit:"", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/humidity-2.png"
         }
         valueTile("weather", "device.weather", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue}'
@@ -179,10 +179,10 @@ metadata {
             state "default", label:'Weather Alerts:\n ${currentValue}'
         }        
 	valueTile("rise", "device.localSunrise", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunrise-icon.png"
+            state "default", label:'${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunrise-2.png"
         }
         valueTile("set", "device.localSunset", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunset-icon.png"
+            state "default", label:'${currentValue}', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunset-2.png"
         }
         valueTile("light", "device.illuminance", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue} lux'
@@ -199,7 +199,7 @@ metadata {
             state "false",       icon: "st.alarm.water.dry",        backgroundColor:"#99ff99"
         }
         valueTile("dewpoint", "device.dewpoint", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'${currentValue}°', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/dewpoint.png"
+            state "default", label:'${currentValue}°', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/dewpoint-2.png"
         }
         valueTile("pressure", "device.pressure", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
             state "pressure", label: 'Barometric Pressure ${currentValue}'
