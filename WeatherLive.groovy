@@ -158,7 +158,7 @@ metadata {
             state "default", label: 'Last Updated\n ${currentValue}'
         }
         valueTile("humidity", "device.humidity", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'Humid\n ${currentValue}%', unit:"", backgroundColor:"#1e9cbb"
+            state "default", label:'hum\n ${currentValue}%', unit:"", backgroundColor:"#1e9cbb"
         }
         valueTile("weather", "device.weather", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue}'
@@ -166,10 +166,10 @@ metadata {
         valueTile("percentPrecip", "device.percentPrecip", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Rain\n ${currentValue}%', backgroundColor:"#1e9cbb"
         }
-        valueTile("percentPrecipToday", "device.percentPrecipToday", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
+        valueTile("percentPrecipToday", "device.percentPrecipToday", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Rain Today\n ${currentValue}'
         }
-        valueTile("percentPrecipLastHour", "device.percentPrecipLastHour", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
+        valueTile("percentPrecipLastHour", "device.percentPrecipLastHour", inactiveLabel: false, width: 3, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Rain Last Hour\n ${currentValue}'
         }
         standardTile("refresh", "device.weather", inactiveLabel: false, width: 2, height: 2, decoration: "flat", wordWrap: true) {
@@ -179,19 +179,19 @@ metadata {
             state "default", label:'Weather Alerts:\n ${currentValue}'
         }        
 	valueTile("rise", "device.localSunrise", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'${currentValue}\n', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunrise-2.png"
+            state "default", label:'${currentValue}\n', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunrise-icon.png"
         }
         valueTile("set", "device.localSunset", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'${currentValue}\n', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunset-2.png"
+            state "default", label:'${currentValue}\n', icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/Sunset-icon.png"
         }
-        valueTile("light", "device.illuminance", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
-            state "default", label:'${currentValue} lux'
+        valueTile("light", "device.illuminance", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
+            state "default", label:'lux\n ${currentValue}', backgroundColor:"#fffc8f"
         }
         valueTile("visibility", "device.visibility", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Visibility\n ${currentValue}'
         }
-        valueTile("uv_index", "device.uv_index", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
-            state "uv_index", label: 'UV Index ${currentValue}', unit: "UV Index"
+        valueTile("uv_index", "device.uv_index", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
+            state "uv_index", label: 'UV\n ${currentValue}', unit: "", backgroundColor:"#ffdab3"
         }
         standardTile("water", "device.water", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'updating...', icon: "st.unknown.unknown.unknown"
@@ -224,8 +224,8 @@ metadata {
 
         
         main "temperature2"
-        details(["temperature", "feelslike", "weather", "weatherIcon", "light", "water", "percentPrecip", "humidity", "dewpoint", 
-		 "windinfo", "pressure", "rise", "visibility", "uv_index", "set", 
+        details(["temperature", "feelslike", "weather", "weatherIcon", "light", "uv_index", "water", "percentPrecip", "humidity", "dewpoint", 
+		 "windinfo", "pressure", "rise", "visibility","set", 
 		 "percentPrecipToday", "percentPrecipLastHour", "lastSTupdate", "alert", "refresh"])}  
 }
 
