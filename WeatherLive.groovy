@@ -160,7 +160,7 @@ metadata {
         valueTile("humidity", "device.humidity", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'Humidity ${currentValue}%', unit:"%"
         }
-        valueTile("weather", "device.weather", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
+        valueTile("weather", "device.weather", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'${currentValue}'
         }
         valueTile("percentPrecip", "device.percentPrecip", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
@@ -193,7 +193,7 @@ metadata {
         valueTile("uv_index", "device.uv_index", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
             state "uv_index", label: 'UV Index ${currentValue}', unit: "UV Index"
         }
-        standardTile("water", "device.water", inactiveLabel: false, width: 2, height: 1, decoration: "flat", wordWrap: true) {
+        standardTile("water", "device.water", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'updating...', icon: "st.unknown.unknown.unknown"
             state "true",        icon: "st.alarm.water.wet",        backgroundColor:"#ff9999"
             state "false",       icon: "st.alarm.water.dry",        backgroundColor:"#99ff99"
@@ -224,9 +224,9 @@ metadata {
 
         
         main "temperature2"
-        details(["temperature", "feelslike", "weather", "percentPrecip", "weatherIcon", "humidity", "light", "dewpoint", 
-		 "windinfo", "pressure", "rise", "visibility", "uv_index", "set", "percentPrecipToday", "lastSTupdate",
-		 "water", "percentPrecipLastHour", "alert", "refresh"])}
+        details(["temperature", "feelslike", "weather", "weatherIcon", "humidity", "water", "percentPrecip", "dewpoint", 
+		 "windinfo", "pressure", "rise", "visibility", "uv_index", "set", "light", "lastSTupdate",
+		 "percentPrecipToday", "percentPrecipLastHour", "alert", "refresh"])}
 }
 
 // parse events into attributes
