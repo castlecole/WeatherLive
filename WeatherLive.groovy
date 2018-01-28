@@ -353,24 +353,24 @@ def poll() {
             switch (speed_units) {
             case "speed_mph" :
                 send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_mph} mph\n(Gust: ${obs.wind_gust_mph} mph)")
-                send(name: "wind_gust", value: "${obs.wind_gust_mph}")
+                send(name: "wind_gust", value: "${obs.wind_gust_mph} mph")
                 send(name: "winddirection", value: "${obs.wind_dir}")
-                send(name: "winddirection_deg", value: "${obs.wind_degrees}")
-                send(name: "wind", value: "${obs.wind_mph}")
+                send(name: "winddirection_deg", value: "${obs.wind_degrees}°")
+                send(name: "wind", value: "${obs.wind_mph} mph")
                 break;
             case "speed_kph":
                 send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_kph} kph\n(Gust: ${obs.wind_gust_kph} kph)")
-                send(name: "wind_gust", value: "${obs.wind_gust_kph}")
+                send(name: "wind_gust", value: "${obs.wind_gust_kph} kph")
                 send(name: "winddirection", value: "${obs.wind_dir}")
-                send(name: "winddirection_deg", value: "${obs.wind_degrees}")
-                send(name: "wind", value: "${obs.wind_kph}")
+                send(name: "winddirection_deg", value: "${obs.wind_degrees}°")
+                send(name: "wind", value: "${obs.wind_kph} kph")
                 break;
             default:
                 send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_mph} mph\n(Gust: ${obs.wind_gust_mph} mph)")
-                send(name: "wind_gust", value: "${obs.wind_gust_mph}")
+                send(name: "wind_gust", value: "${obs.wind_gust_mph} mph")
                 send(name: "winddirection", value: "${obs.wind_dir}")
-                send(name: "winddirection_deg", value: "${obs.wind_degrees}")
-                send(name: "wind", value: "${obs.wind_mph}")
+                send(name: "winddirection_deg", value: "${obs.wind_degrees}°")
+                send(name: "wind", value: "${obs.wind_mph} mph")
             }
         } else {
             send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_mph} mph\n(Gust: ${obs.wind_gust_mph} mph)")
