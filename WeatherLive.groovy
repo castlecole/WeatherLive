@@ -18,7 +18,7 @@
 */
 
 def version() {
-	return "v2 (20170320)\nWeather Live - WWW"
+	return "v2 (20170324)\nWeather Underground Live - WWW"
 }
 
 metadata {
@@ -57,6 +57,7 @@ metadata {
         attribute "solarradiation", "string"
         attribute "visibility", "string"
         attribute "pressureTrend", "string"
+	attribute "lastUpdated", "string"
         
         command "refresh"
     }
@@ -163,6 +164,9 @@ metadata {
         valueTile("lastSTupdate", "device.lastSTupdate", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'Last Updated\n ${currentValue}'
         }
+        valueTile("lastUpdated", "device.lastSTupdate", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
+            state "default", label: 'Last Updated\n ${currentValue}', backgroundColor:"#00a0dc"
+        }
         valueTile("humidity", "device.humidity", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label:'hum\n ${currentValue}%', unit:"", backgroundColor:"#0094ee"
         }
@@ -262,7 +266,8 @@ def poll() {
     if (obs) {
         log.debug "obs --> ${obs}"
         def now = new Date().format("EEE MMM dd yyyy h:mm:ss a", location.timeZone)
-        sendEvent(name:"lastSTupdate", value: now)
+        sendEvent(name:"lastSTupdate", value: now, displayed: false)
+        sendEvent(name:"lastUpdated", value: now, displayed: true)
         
         def weatherIcon = obs.icon_url.split("/")[-1].split("\\.")[0]
 
