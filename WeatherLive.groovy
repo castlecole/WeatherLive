@@ -164,7 +164,7 @@ metadata {
         valueTile("lastSTupdate", "device.lastSTupdate", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'Last Updated\n ${currentValue}'
         }
-        valueTile("lastUpdated", "device.lastSTupdate", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
+        valueTile("lastUpdated", "device.lastUpdated", inactiveLabel: false, width: 4, height: 1, decoration: "flat", wordWrap: true) {
             state "default", label: 'Last Updated\n ${currentValue}', backgroundColor:"#00a0dc"
         }
         valueTile("humidity", "device.humidity", inactiveLabel: false, width: 1, height: 1, decoration: "flat", wordWrap: true) {
@@ -231,7 +231,6 @@ metadata {
 					[value: 98, color: "#bc2323"]])
             	}		
 	}
-
         
         main "temperature2"
         details(["temperature", "feelslike", "weather", "weatherIcon", "light", "uv_index", "water", "percentPrecip",  
