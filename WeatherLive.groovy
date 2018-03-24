@@ -16,6 +16,11 @@
 *
 *  Date: 2013-04-30
 */
+
+def version() {
+	return "v2 (20170320)\nWeather Live - WWW"
+}
+
 metadata {
     definition (name: "Weather Live", namespace: "castlecole", author: "Takis") {
         capability "Illuminance Measurement"
@@ -87,6 +92,7 @@ metadata {
                 "speed_kph":"Kilometers per Hour"
             ])
         input "weather", "device.smartweatherStationTile", title: "Weather...", multiple: true, required: false
+	input description: "Version: ${version()}", type: "paragraph", element: "paragraph", title: ""
     }
     
     tiles(scale: 2) {
@@ -102,8 +108,8 @@ metadata {
 					[value: 92, color: "#d04e00"],
 					[value: 98, color: "#bc2323"]
                ])
-            }
-            tileAttribute("device.feelsLike", key: "SECONDARY_CONTROL") {
+        }
+        tileAttribute("device.feelsLike", key: "SECONDARY_CONTROL") {
                 attributeState("default", label:'Feels Like ${currentValue}°', icon:"https://raw.githubusercontent.com/castlecole/Xiaomi/master/temperature2.png")
             }
         }    
@@ -255,7 +261,7 @@ def poll() {
     def obs = get("conditions")?.current_observation
     if (obs) {
         log.debug "obs --> ${obs}"
-        def now = new Date().format('HH:mm:ss M.d.yyyy',location.timeZone)
+        def now = new Date().format("EEE MMM dd yyyy h:mm:ss a", location.timeZone)
         sendEvent(name:"lastSTupdate", value: now)
         
         def weatherIcon = obs.icon_url.split("/")[-1].split("\\.")[0]
@@ -352,28 +358,28 @@ def poll() {
         if (speed_units) {
             switch (speed_units) {
             case "speed_mph" :
-                send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_mph} mph\n(Gust: ${obs.wind_gust_mph} mph)")
+                send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_mph} mph\n(Gust: ${obs.wind_gust_mph} mph)", displayed: false)
                 send(name: "wind_gust", value: "${obs.wind_gust_mph} mph")
                 send(name: "winddirection", value: "${obs.wind_dir}")
                 send(name: "winddirection_deg", value: "${obs.wind_degrees}°")
                 send(name: "wind", value: "${obs.wind_mph} mph")
                 break;
             case "speed_kph":
-                send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_kph} kph\n(Gust: ${obs.wind_gust_kph} kph)")
+                send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_kph} kph\n(Gust: ${obs.wind_gust_kph} kph)", displayed: false)
                 send(name: "wind_gust", value: "${obs.wind_gust_kph} kph")
                 send(name: "winddirection", value: "${obs.wind_dir}")
                 send(name: "winddirection_deg", value: "${obs.wind_degrees}°")
                 send(name: "wind", value: "${obs.wind_kph} kph")
                 break;
             default:
-                send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_mph} mph\n(Gust: ${obs.wind_gust_mph} mph)")
+                send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_mph} mph\n(Gust: ${obs.wind_gust_mph} mph)", displayed: false)
                 send(name: "wind_gust", value: "${obs.wind_gust_mph} mph")
                 send(name: "winddirection", value: "${obs.wind_dir}")
                 send(name: "winddirection_deg", value: "${obs.wind_degrees}°")
                 send(name: "wind", value: "${obs.wind_mph} mph")
             }
         } else {
-            send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_mph} mph\n(Gust: ${obs.wind_gust_mph} mph)")
+            send(name: "windinfo", value: "${obs.wind_dir} (${obs.wind_degrees}°) at ${obs.wind_mph} mph\n(Gust: ${obs.wind_gust_mph} mph)", displayed: false)
         }                  
         
         // Since precip_1hr_in is a string, we need to convert it to a decimal in order to compare it as a number.
